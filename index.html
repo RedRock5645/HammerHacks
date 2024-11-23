@@ -7,12 +7,29 @@
                 width:500px;
                 height:auto;
             }
+            h1{
+                color: brown;
+            }
         </style>
     </head>
     <body>
         <h1> Hammy the Hammer</h1>
         <p>Once upon a time, there existed a hammer named Hammy</p>
         <img src = "https://img.freepik.com/premium-vector/traditional-hammer-clipart_251822-456.jpg">
-        <button>Pat Hammy</button>
+        
+        <blockquote id = "quote">"Hammertime!!!!!!"</blockquote>
+        <button onclick = changeQuote()>Pat Hammy</button>
+        <script>
+            var index = 0;
+            function changeQuote(){
+                var quotes = [`"I really like hammers!"-Hammy`, `"rawr!"- Hammy`, `Hammertime!!!!!!`]
+                var blockquote = document.querySelector("blockquote");
+                blockquote.innerHTML = quotes[index];
+                index++;
+                if (index == 3){
+                    index = 0;
+                }
+            }
+        </script>
     </body>
 </html>
